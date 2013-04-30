@@ -13,7 +13,7 @@ $lu->data['logo']         = theme_url('logo_80x80.png');
 $lu->data['logo_width']   = 80;
 $lu->data['logo_height']  = 80;
 $lu->data['footer'] = <<<EOD
-<p>Lydia &copy; by Jonathan Arevalo @ BTH </p>
+<p>Lumina &copy; by Jonathan Arevalo @ BTH </p>
 
 <p>Tools: 
 <a href="http://validator.w3.org/check/referer">html5</a>
