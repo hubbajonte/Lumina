@@ -1,21 +1,104 @@
-/** 
-* Description: Core theme for Lumina
+/*
+Nedan följer min EGNA stil. 
+Dock så är Boilerplatens CSS inkluderad i filen så detta är egentligen bara en utökning utav den filen.
 */
+@import url(../css/main.css);
+html {
+overflow-y:scroll;
+background:#eee;
+}
+/*Bodyns färg*/
+body {
+background:#eee;
+margin:-8px;
+}
+
+
+/*Ändringar för "huvud" headern med navigationsmenyn*/
+#header {
+margin:0px auto;
+margin-top:30px;
+margin-bottom:10px;
+width:950px;
+color:#fff;
+background:#222;
+text-align:center;
+font-size:large;
+padding:1em 1.9em 1em 1.9em;
+text-transform:uppercase;
+-moz-box-shadow: 10px 10px 5px #888; 
+ -webkit-box-shadow: 10px 10px 5px #888; 
+ box-shadow: 10px 10px 5px #888;
+}
+/*Stil för den huvudsakliga sidan*/
+#main{
+margin:0px auto;
+width:950px;
+padding:2em;
+border:2px solid #222;
+background:#ffffff;
+-moz-box-shadow: 10px 10px 5px #888; 
+ -webkit-box-shadow: 10px 10px 5px #888; 
+ box-shadow: 10px 10px 5px #888;
+}
+/*Footerns stil*/
+#footer {
+margin:0px auto;
+color:white;
+background:#222;
+text-align:center;
+padding-bottom:0.1em;
+font-size:large;
+}
+
+#footer a:link{
+color:#baffaf;
+}
+
 
 /**
-* Structure
-*/
-html{}
-body{
-   background-color:#eee;
-   font: 1em Verdana, Arial, Helvetica, sans-serif;
+ * User feedback message wrappers.
+ */
+.error, .alert, .warning, .notice, .success, .info { 
+padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
+
+.error, .alert { background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; }
+.notice, .warning { background: #fff6bf; color: #514721; border-color: #ffd324; }
+.success       { background: #e6efc2; color: #264409; border-color: #c6d880; }
+.info          { background: #d5edf8; color: #205791; border-color: #92cae4; }
+.error a, .alert a { color: #8a1f11; }
+.notice a, .warning a { color: #514721; }
+.success a         { color: #264409; }
+.info a            { color: #205791; }
+
+
+/*
+
+*För närvarande bortkommenterat
+*
+
+#navbar a {
+padding:6px 8px;
+text-decoration:none;
+border:3px solid transparent;
+color:#fff;
+}
+Navigationsmenyernas stil
+#navbar a:hover,
+#navbar a.selected{
+background:#222;
+color:#fff;
+border:3px solid #baffaf;
+}
+Diverse ändringar
+.center{
+text-align:center;
 }
 
-#header,
-#main,
-#footer {
-   margin:0 auto;
-   width:970px;
-   background-color:#fff;
-   padding: 1em;
+.mebild {
+width:30%;
+height:30%;
+border:2px solid #222;
 }
+
+*/

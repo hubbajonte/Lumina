@@ -11,7 +11,7 @@
 define('LUMINA_INSTALL_PATH', dirname(__FILE__));
 define('LUMINA_SITE_PATH', LUMINA_INSTALL_PATH . '/site');
 
-require(LUMINA_INSTALL_PATH.'/src/CLumina/bootstrap.php');
+require(LUMINA_INSTALL_PATH.'/src/bootstrap.php');
 
 $lu = CLumina::Instance();
 
@@ -29,7 +29,7 @@ $lu->FrontControllerRoute();
 
 $lu->ThemeEngineRender();
 
-// Visual content, onlu for debug
+// Visual content, only for debug
 
 /*
 echo "<h1>I'm LUMINA - index.php</h1>";
