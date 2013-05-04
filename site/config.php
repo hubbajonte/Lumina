@@ -15,6 +15,8 @@ ini_set('display_errors', 1);
  * Set what to show as debug or developer information in the get_debug() theme helper.
  */
 $lu->config['debug']['lumina'] = false;
+$lu->config['debug']['session'] = false;
+$lu->config['debug']['timer'] = true;
 $lu->config['debug']['db-num-queries'] = true;
 $lu->config['debug']['db-queries'] = true;
 
@@ -42,9 +44,22 @@ $lu->config['base_url'] = null;
 
 
 /**
+ * How to hash password of new users, choose from: plain, md5salt, md5, sha1salt, sha1.
+ */
+$lu->config['hashing_algorithm'] = 'sha1salt';
+
+
+/**
+ * Allow or disallow creation of new user accounts.
+ */
+$lu->config['create_new_users'] = true;
+
+
+/**
  * Define session name
  */
-$lu->config['session_name'] = preg_replace('/[:\.\/-_]/', '', $_SERVER["SERVER_NAME"]);
+$lu->config['session_name'] = preg_replace('/[:\.\/-_]/', '', __DIR__);
+$lu->config['session_key']  = 'lumina';
 
 
 /**
@@ -64,11 +79,6 @@ $lu->config['character_encoding'] = 'UTF-8';
  */
 $lu->config['language'] = 'en';
 
-/*
-* Sessionkey
-*/
-$lu->config['session_key']  = 'lumina';
-
 
 /**
  * Define the controllers, their classname and enable/disable them.
@@ -83,6 +93,8 @@ $lu->config['controllers'] = array(
   'index'     => array('enabled' => true,'class' => 'CCIndex'),
   'developer' => array('enabled' => true,'class' => 'CCDeveloper'),
   'guestbook' => array('enabled' => true,'class' => 'CCGuestbook'),
+  'user'      => array('enabled' => true,'class' => 'CCUser'),
+  'acp'       => array('enabled' => true,'class' => 'CCAdminControlPanel'),
 );
 
 /**

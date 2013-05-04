@@ -40,6 +40,7 @@ background:#ffffff;
 -moz-box-shadow: 10px 10px 5px #888; 
  -webkit-box-shadow: 10px 10px 5px #888; 
  box-shadow: 10px 10px 5px #888;
+ overflow:auto;
 }
 /*Footerns stil*/
 #footer {
@@ -54,6 +55,32 @@ font-size:large;
 #footer a:link{
 color:#baffaf;
 }
+
+ /* Login menyn
+ */
+#login-menu{
+float:right;
+margin-top:-5px;
+margin-right:15px;
+}
+#login-menu img.gravatar{
+vertical-align:middle;
+}
+#login-menu a{
+text-decoration:none;
+}
+#login-menu a:hover{
+text-decoration:underline;
+}
+
+/**
+ * Forms
+ */
+input{font:inherit;}
+input[readonly]{color:#666;}
+label{font-size:smaller;}
+.validation-failed{border:2px solid red;}
+.validation-message{color:red;font-size:smaller;}
 
 
 /**
