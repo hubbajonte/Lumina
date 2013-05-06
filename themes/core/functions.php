@@ -14,6 +14,9 @@ $lu->data['logo_width']   = 80;
 $lu->data['logo_height']  = 80;
 $lu->data['footer'] = <<<EOD
 <p>Lumina &copy; by Jonathan Arevalo @ BTH </p>
+<p>
+My me-page: <a href="http://www.student.bth.se/~joay11/phpmvc/kmom05/me/index.php">Me-page</a>
+</p>
 
 <p>Tools: 
 <a href="http://validator.w3.org/check/referer">html5</a>

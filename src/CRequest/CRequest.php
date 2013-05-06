@@ -10,7 +10,7 @@ class CRequest {
 	 * Member variables
 	 */
 	public $cleanUrl;
-  public $querystringUrl;
+    public $querystringUrl;
 
 
 	/**
@@ -31,8 +31,9 @@ class CRequest {
 	 * Create a url in the way it should be created.
 	 *
 	 * @param $url string the relative url or the controller
-	 * @param $method string the method to use, $url is then the controller or empty for current
+	 * @param $method string the method to use, $url is then the controller or empty for current controller.
 	 * @param $arguments string the extra arguments to send to the method
+	 * @returns string the url
 	 */
 	public function CreateUrl($url=null, $method=null, $arguments=null) {
     // If fully qualified just leave it.

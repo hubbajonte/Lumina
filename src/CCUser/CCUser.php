@@ -61,6 +61,7 @@ class CCUser extends CObject implements IController {
       $ret = $this->user->ChangePassword($form['password']['value']);
       $this->AddMessage($ret, 'Saved new password.', 'Failed updating password.');
     }
+	    $this->RedirectToController('profile');
   }
   
 
@@ -77,6 +78,7 @@ class CCUser extends CObject implements IController {
     $this->user['email'] = $form['email']['value'];
     $ret = $this->user->Save();
     $this->AddMessage($ret, 'Saved profile.', 'Failed saving profile.');
+	$this->RedirectToController('profile');
   }
   
 
@@ -159,6 +161,9 @@ class CCUser extends CObject implements IController {
       $this->AddMessage('success', "Welcome {$this->user['name']}. Your have successfully created a new account.");
       $this->user->Login($form['acronym']['value'], $form['password']['value']);
       $this->RedirectToController('profile');
+	   } else {
+      $this->AddMessage('notice', "Failed to create an account.");
+      $this->RedirectToController('create');
     }
   }
   

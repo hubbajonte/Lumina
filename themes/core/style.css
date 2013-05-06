@@ -33,6 +33,7 @@ text-transform:uppercase;
 /*Stil för den huvudsakliga sidan*/
 #main{
 margin:0px auto;
+margin-bottom:15px;
 width:950px;
 padding:2em;
 border:2px solid #222;
@@ -40,7 +41,6 @@ background:#ffffff;
 -moz-box-shadow: 10px 10px 5px #888; 
  -webkit-box-shadow: 10px 10px 5px #888; 
  box-shadow: 10px 10px 5px #888;
- overflow:auto;
 }
 /*Footerns stil*/
 #footer {
@@ -50,6 +50,7 @@ background:#222;
 text-align:center;
 padding-bottom:0.1em;
 font-size:large;
+overflow:auto;
 }
 
 #footer a:link{
@@ -76,11 +77,15 @@ text-decoration:underline;
 /**
  * Forms
  */
-input{font:inherit;}
+input,textarea{font:inherit;}
 input[readonly]{color:#666;}
 label{font-size:smaller;}
 .validation-failed{border:2px solid red;}
 .validation-message{color:red;font-size:smaller;}
+.form-action-link{font-size:smaller;}
+
+.content-edit input[type=text]{width:30em;}
+.content-edit textarea{width:40em;height:15em;}
 
 
 /**
