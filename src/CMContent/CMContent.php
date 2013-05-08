@@ -200,7 +200,7 @@ Here is a paragraph with some **bold** text and some *italic* text and a [link t
     }
     return $data;
   }
-  */
+
   
   /**
    * Get the filtered content from the class CTextFilter.

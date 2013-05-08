@@ -124,6 +124,9 @@ function esc($str) {
 }
 
 
+
+
+
 /**
  * Filter data according to a filter. Uses CMContent::Filter()
  *
@@ -132,6 +135,9 @@ function esc($str) {
  * @returns string the filtered string.
  */
 
+ function filter_data($data, $filter) {
+  return CMContent::Filter($data, $filter);
+}
 
 
 /**

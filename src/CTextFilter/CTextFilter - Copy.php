@@ -23,7 +23,8 @@ class CTextFilter
         ;
     }
 	
-    /**
+    
+  /**
    * Filter content according to a filter.
    *
    * @param $data string of text to filter and format according its filter settings.
@@ -57,7 +58,6 @@ class CTextFilter
         
         return $data;
     }
-
 
 
     /**
