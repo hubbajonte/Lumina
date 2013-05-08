@@ -6,7 +6,7 @@
 /**
  * Add static entries for use in the template file. 
  */
-$lu->data['header'] = '<h2>Lumina</h2>';
+$lu->data['header'] = 'Lumina';
 $lu->data['slogan'] = 'A PHP-based MVC-inspired CMF';
 $lu->data['favicon']      = theme_url('logo_80x80.png');
 $lu->data['logo']         = theme_url('logo_80x80.png');

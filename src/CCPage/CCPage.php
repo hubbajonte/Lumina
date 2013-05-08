@@ -14,8 +14,7 @@ class CCPage extends CObject implements IController {
     parent::__construct();
   }
 
-
-  /**
+ /**
    * Display an empty page.
    */
   public function Index() {
@@ -41,4 +40,4 @@ class CCPage extends CObject implements IController {
   }
 
 
-}
+} 

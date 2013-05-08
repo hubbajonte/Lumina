@@ -1,6 +1,6 @@
 <?php
 /**
- * Main class for Lumina, kinda holds everything.
+ * Main class for Lumina, holds everything.
  *
  * @package LuminaCore
  */
@@ -38,7 +38,7 @@ class CLumina implements ISingleton {
 		$this->session->PopulateFromSession();
 
 		// Set default date/time-zone
-		date_default_timezone_set($this->config['timezone']);
+		date_default_timezone_set('UTC');
 
 		// Create a database object.
 		if(isset($this->config['database'][0]['dsn'])) {
@@ -114,26 +114,24 @@ class CLumina implements ISingleton {
   }
   
   
-	/**
-	 * ThemeEngineRender, renders the reply of the request to HTML or whatever.
-	 */
+	  /**
+   * ThemeEngineRender, renders the reply of the request to HTML or whatever.
+   */
   public function ThemeEngineRender() {
     // Save to session before output anything
     $this->session->StoreInSession();
   
     // Is theme enabled?
-    if(!isset($this->config['theme'])) {
-      return;
-    }
+    if(!isset($this->config['theme'])) { return; }
     
     // Get the paths and settings for the theme
-    $themeName 	= $this->config['theme']['name'];
-    $themePath 	= LUMINA_INSTALL_PATH . "/themes/{$themeName}";
-    $themeUrl		= $this->request->base_url . "themes/{$themeName}";
+    $themeName  = $this->config['theme']['name'];
+    $themePath  = LUMINA_INSTALL_PATH . "/themes/{$themeName}";
+    $themeUrl   = $this->request->base_url . "themes/{$themeName}";
     
     // Add stylesheet path to the $lu->data array
-    $this->data['stylesheet'] = "{$themeUrl}/style.css";
-
+    $this->data['stylesheet'] = "{$themeUrl}/".$this->config['theme']['stylesheet'];
+    
     // Include the global functions.php and the functions.php that are part of the theme
     $lu = &$this;
     include(LUMINA_INSTALL_PATH . '/themes/functions.php');
@@ -144,8 +142,12 @@ class CLumina implements ISingleton {
 
     // Extract $lu->data to own variables and handover to the template file
     extract($this->data);      
-    extract($this->views->GetData());      
-    include("{$themePath}/default.tpl.php");
+    extract($this->views->GetData());
+    if(isset($this->config['theme']['data'])) {
+      extract($this->config['theme']['data']);
+    }
+    $templateFile = (isset($this->config['theme']['template_file'])) ? $this->config['theme']['template_file'] : 'default.tpl.php';
+    include("{$themePath}/{$templateFile}");
   }
-
+  
 }

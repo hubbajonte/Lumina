@@ -6,6 +6,32 @@
  
 
 /**
+ * Get list of tools.
+ */
+function get_tools() {
+  global $lu;
+  return <<<EOD
+<p>Tools: 
+<a href="http://validator.w3.org/check/referer">html5</a>
+<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">css3</a>
+<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css21">css21</a>
+<a href="http://validator.w3.org/unicorn/check?ucn_uri=referer&amp;ucn_task=conformance">unicorn</a>
+</p>
+
+<p>Docs:
+<a href="http://www.w3.org/2009/cheatsheet">cheatsheet</a>
+<a href="http://dev.w3.org/html5/spec/spec.html">html5</a>
+<a href="http://www.w3.org/TR/CSS2">css2</a>
+<a href="http://www.w3.org/Style/CSS/current-work#CSS3">css3</a>
+<a href="http://php.net/manual/en/index.php">php</a>
+<a href="http://www.sqlite.org/lang.html">sqlite</a>
+<a href="http://www.blueprintcss.org/">blueprint</a>
+</p>
+EOD;
+}
+
+
+/**
  * Print debuginformation from the framework.
  */
 function get_debug() {
@@ -89,6 +115,9 @@ function get_gravatar($size=null) {
 
 /**
  * Escape data to make it safe to write in the browser.
+ *
+ * @param $str string to escape.
+ * @returns string the escaped string.
  */
 function esc($str) {
   return htmlEnt($str);
@@ -102,9 +131,6 @@ function esc($str) {
  * @param $filter string the filter to use.
  * @returns string the filtered string.
  */
-function filter_data($data, $filter) {
-  return CMContent::Filter($data, $filter);
-}
 
 
 
@@ -158,7 +184,19 @@ function current_url() {
 
 /**
  * Render all views.
+ *
+ * @param $region string the region to draw the content in.
  */
-function render_views() {
-  return CLumina::Instance()->views->Render();
+function render_views($region='default') {
+  return CLumina::Instance()->views->Render($region);
+}
+
+
+/**
+ * Check if region has views. Accepts variable amount of arguments as regions.
+ *
+ * @param $region string the region to draw the content in.
+ */
+function region_has_content($region='default' /*...*/) {
+  return CLumina::Instance()->views->RegionHasView(func_get_args());
 }

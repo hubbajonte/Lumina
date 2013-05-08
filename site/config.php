@@ -96,14 +96,33 @@ $lu->config['controllers'] = array(
   'content'   => array('enabled' => true,'class' => 'CCContent'),
   'blog'      => array('enabled' => true,'class' => 'CCBlog'),
   'page'      => array('enabled' => true,'class' => 'CCPage'),
+  'theme'     => array('enabled' => true,'class' => 'CCTheme'),
   'user'      => array('enabled' => true,'class' => 'CCUser'),
   'acp'       => array('enabled' => true,'class' => 'CCAdminControlPanel'),
 );
+
 
 /**
  * Settings for the theme.
  */
 $lu->config['theme'] = array(
-  // The name of the theme in the theme directory
-  'name'    => 'core', 
+  'name'            => 'grid',            // The name of the theme in the theme directory
+  'stylesheet'      => 'style.php',       // Main stylesheet to include in template files
+  'template_file'   => 'index.tpl.php',   // Default template file, else use default.tpl.php
+  // A list of valid theme regions
+  'regions' => array('flash','featured-first','featured-middle','featured-last',
+    'primary','sidebar','triptych-first','triptych-middle','triptych-last',
+    'footer-column-one','footer-column-two','footer-column-three','footer-column-four',
+    'footer',
+  ),
+  // Add static entries for use in the template file. 
+  'data' => array(
+    'header' => '<h3 class="lumina">Lumina</h3>',
+    'slogan' => 'A PHP-based MVC-inspired CMF',
+    'favicon' => 'logo_80x80.png',
+    'logo' => 'logo_80x80.png',
+    'logo_width'  => 80,
+    'logo_height' => 80,
+    'footer' => '<p>Lumina &copy; by Jonathan Arevalo @ Blekinge Institute of Technology</p>',
+  ),
 );

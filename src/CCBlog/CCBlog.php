@@ -23,6 +23,7 @@ class CCBlog extends CObject implements IController {
     $this->views->SetTitle('Blog')
                 ->AddInclude(__DIR__ . '/index.tpl.php', array(
                   'contents' => $content->ListAll(array('type'=>'post', 'order-by'=>'title', 'order-order'=>'DESC')),
+				  'content' => $content,
                 ));
   }
 
