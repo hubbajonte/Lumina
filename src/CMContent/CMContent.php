@@ -182,19 +182,16 @@ Here is a paragraph with some **bold** text and some *italic* text and a [link t
   }
   
   
-  /**
+ /**
    * Filter content according to a filter.
    *
    * @param $data string of text to filter and format according its filter settings.
    * @returns string with the filtered data.
    */
-   /*
   public static function Filter($data, $filter) {
     switch($filter) {
-      case 'php': $data = nl2br(makeClickable(eval('?>'.$data))); break;
-      case 'html': $data = nl2br(makeClickable($data)); break;
-      case 'htmlpurify': $data = nl2br(CHTMLPurifier::Purify($data)); break;
-      case 'bbcode': $data = nl2br(bbcode2html(htmlEnt($data))); break;
+      /*case 'php': $data = nl2br(makeClickable(eval('?>'.$data))); break;
+      case 'html': $data = nl2br(makeClickable($data)); break;*/
       case 'plain': 
       default: $data = nl2br(makeClickable(htmlEnt($data))); break;
     }
