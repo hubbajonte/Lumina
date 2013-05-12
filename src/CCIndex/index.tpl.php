@@ -9,7 +9,7 @@
 <p>You can review its source directly on github: <a href='https://github.com/hubbajonte/Lumina'>https://github.com/hubbajonte/Lumina</a></p>
 
 <h2>Installation</h2>
-<p><b>Note:</b><em>If you're on the BTH Student server then you need to change the .htaccess ReWriteBase so it points to your directory</em>
+<p><strong>Note: </strong><em>If you're on the BTH Student server then you need to change the .htaccess ReWriteBase so it points to your directory</em>
 </p>
 <p>First you have to make the data-directory writable. This is the place where Lumina needs
 to be able to write and create files. You also need to make the grid-directory writable so lessphp can work. </p>

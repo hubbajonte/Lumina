@@ -17,8 +17,8 @@ ini_set('display_errors', 1);
 $lu->config['debug']['lumina'] = false;
 $lu->config['debug']['session'] = false;
 $lu->config['debug']['timer'] = true;
-$lu->config['debug']['db-num-queries'] = true;
-$lu->config['debug']['db-queries'] = true;
+$lu->config['debug']['db-num-queries'] = false;
+$lu->config['debug']['db-queries'] = false;
 
 
 /**
