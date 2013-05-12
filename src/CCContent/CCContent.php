@@ -17,6 +17,7 @@ class CCContent extends CObject implements IController {
    * Show a listing of all content.
    */
   public function Index() {
+  
     $content = new CMContent();
     $this->views->SetTitle('Content Controller')
                 ->AddInclude(__DIR__ . '/index.tpl.php', array(
@@ -31,6 +32,8 @@ class CCContent extends CObject implements IController {
    * @param id integer the id of the content.
    */
   public function Edit($id=null) {
+  if ($this->user['isAuthenticated'])
+		{
     $content = new CMContent($id);
     $form = new CFormContent($content);
     $status = $form->Check();
@@ -48,6 +51,7 @@ class CCContent extends CObject implements IController {
                   'content'=>$content, 
                   'form'=>$form,
                 ));
+  }
   }
   
 

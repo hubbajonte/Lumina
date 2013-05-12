@@ -1,0 +1,11 @@
+/** 
+ * Description: Sample theme for site which extends the Lumina grid-theme.
+ */
+@import url(../../../themes/grid/style.css);
+
+html{background-color:#eee;}
+body{background-color:#fff;}
+#outer-wrap-header{background-color:#eee;border-bottom:1px solid #000;}
+#outer-wrap-footer{background-color:#222;border-top:2px solid #eee;}
+a{color:#0099ff}
+#navbar ul.menu li a.selected{background-color:#fff;border-bottom:none;}

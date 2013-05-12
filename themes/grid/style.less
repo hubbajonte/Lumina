@@ -189,6 +189,23 @@ body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
 }
 
 
+
+
+/** --------------------------------------------------------------
+* Navbar
+*/
+#navbar{
+  ul.menu{list-style-type:none;padding:2px 8px;margin:0;
+    li{padding:0;margin:0;display:inline;
+      a{padding:6px 8px;text-decoration:none;border:2px solid transparent;
+        &:hover{background:#ddd;border:2px solid #999;}
+        &.selected{background:#ccc;border:2px solid #999;}
+      }
+    }
+  }
+}
+
+
 /** --------------------------------------------------------------
  * The flash area.
  *
@@ -220,7 +237,13 @@ body{margin:0;padding:0;color:@color;background-color:@bgcolor2;
 #main{}
 
 #primary{.column(8);}
-#sidebar{.column(4);}
+#sidebar{.column(4);
+  .box{border-top:4px double #ccc;padding-top:@magic-number/2;margin-bottom:@magic-number*2.5-4px;
+    h4{}
+  }
+}
+
+
 
 
 /** --------------------------------------------------------------

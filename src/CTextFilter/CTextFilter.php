@@ -1,6 +1,6 @@
 <?php
 /**
- * CTextFilter is used to create a list of available filters when writing och editing text.
+ * CTextFilter is used to create a list of available filters when writing and editing text.
  * CMContent calls this class.
  * 
  * @package LuminaCore
