@@ -12,7 +12,7 @@
 <p><strong>Note: </strong><em>If you're on the BTH Student server then you need to change the .htaccess ReWriteBase so it points to your directory</em>
 </p>
 <p>First you have to make the data-directory writable. This is the place where Lumina needs
-to be able to write and create files. You also need to make the grid-directory writable so lessphp can work. </p>
+to be able to write and create files. </p>
 <blockquote>
 <code>cd lumina; chmod 777 site/data</code>
 </blockquote>
