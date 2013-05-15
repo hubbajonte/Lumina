@@ -26,7 +26,6 @@ class CCMycontroller extends CObject implements IController {
    * The blog.
    */
   public function Blog() {
-
     $content = new CMContent();
     $this->views->SetTitle('My blog')
                 ->AddInclude(__DIR__ . '/blog.tpl.php', array(

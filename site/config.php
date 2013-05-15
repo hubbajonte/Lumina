@@ -91,6 +91,7 @@ $lu->config['language'] = 'en';
  */
 $lu->config['controllers'] = array(
   'index'     => array('enabled' => true,'class' => 'CCIndex'),
+  'setup'     => array('enabled' => true,'class' => 'CCSetup'),
   'developer' => array('enabled' => true,'class' => 'CCDeveloper'),
   'guestbook' => array('enabled' => true,'class' => 'CCGuestbook'),
   'content'   => array('enabled' => true,'class' => 'CCContent'),

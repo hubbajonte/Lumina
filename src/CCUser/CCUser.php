@@ -40,6 +40,7 @@ class CCUser extends CObject implements IController {
     $this->views->SetTitle('User Profile')
                 ->AddInclude(__DIR__ . '/profile.tpl.php', array(
                   'is_authenticated'=>$this->user['isAuthenticated'], 
+				  'hasRoleAdmin'=>$this->user['hasRoleAdmin'], 
                   'user'=>$this->user,
                   'profile_form'=>$form->GetHTML(),
                 ));
@@ -100,21 +101,18 @@ class CCUser extends CObject implements IController {
   }
   
 
-  /**
+ /**
    * Perform a login of the user as callback on a submitted form.
    */
- public function DoLogin($form = "") {
-    if (empty($form)) {
-      $this->AddMessage('notice', "Failed to login, user does not exist or password does not match.");
-      $this->RedirectToController('login');
-      return;
-    }
+  public function DoLogin($form) {
     if($this->user->Login($form['acronym']['value'], $form['password']['value'])) {
       $this->AddMessage('success', "Welcome {$this->user['name']}.");
       $this->RedirectToController('profile');
+    } else {
+      $this->AddMessage('notice', "Failed to login, user does not exist or password does not match.");
+      $this->RedirectToController('login');      
     }
   }
-  
 
   /**
    * Logout a user.

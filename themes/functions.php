@@ -136,7 +136,35 @@ function esc($str) {
  */
 
  function filter_data($data, $filter) {
-  return CMContent::Filter($data, $filter);
+  return CTextFilter::Filter($data, $filter);
+}
+
+
+ /**
+   * Function for checking if the database is writable 
+   * @returns true or false
+   */
+function CheckWritable($filename) {
+   if (is_writable($filename)) {
+    echo '<p class="success">The folder is writable.</p>';
+    } else {
+    echo '<p class="error">The folder is not writable. Please repeat the first step.</p>';
+}
+
+}
+
+
+   /**
+   * Function for checking if the user has the right version of PHP installed
+   * @returns true or false
+   */
+function CheckPHPVersion() {
+   if (version_compare(phpversion(), '5.3.00', '>')) {
+     echo '<p class="success">Your PHP version is compatible with Lumina.</p>';
+    } else {
+     echo '<p class="error">Your PHP version is not compatible with Lumina. Please update PHP before you initiate the modules.</p>';
+}
+ 
 }
 
 
@@ -202,6 +230,8 @@ function current_url() {
 }
 
 
+
+
 /**
  * Render all views.
  *
@@ -220,3 +250,20 @@ function render_views($region='default') {
 function region_has_content($region='default' /*...*/) {
   return CLumina::Instance()->views->RegionHasView(func_get_args());
 }
+
+/**
+ * Check if the user is ok
+ *
+ * @returns a message telling if everything is ok or not.
+ */
+
+function SetupOK() {
+$filename = 'site/data';
+if (is_writable($filename) && version_compare(phpversion(), '5.3.00', '>')) {
+   echo '<p><a href="setup/install">Install the modules.</a></p>';
+} else {
+     echo '<p class="error">Sorry, you need to fix the stuff above before you can install the modules.</p>';
+}
+}
+
+

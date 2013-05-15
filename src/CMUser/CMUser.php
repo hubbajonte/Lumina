@@ -100,6 +100,7 @@ class CMUser extends CObject implements IHasSQL, ArrayAccess, IModule {
       'get group memberships'   => 'SELECT * FROM Groups AS g INNER JOIN User2Groups AS ug ON g.id=ug.idGroups WHERE ug.idUser=?;',
       'update profile'          => "UPDATE User SET name=?, email=?, updated=datetime('now') WHERE id=?;",
       'update password'         => "UPDATE User SET algorithm=?, salt=?, password=?, updated=datetime('now') WHERE id=?;",
+	  'update content as deleted' => "UPDATE User SET deleted=datetime('now') WHERE id=?;",
      );
     if(!isset($queries[$key])) {
       throw new Exception("No such SQL query, key '$key' was not found.");
@@ -246,6 +247,26 @@ class CMUser extends CObject implements IHasSQL, ArrayAccess, IModule {
     $this->db->ExecuteQuery(self::SQL('update password'), array($password['algorithm'], $password['salt'], $password['password'], $this['id']));
     return $this->db->RowCount() === 1;
   }
+  
+  
+  /**
+   * Delete content. Set its deletion-date to enable wastebasket functionality.
+   *
+   * @returns boolean true if success else false.
+   */
+  public function Delete() {
+    if($this['id']) {
+      $this->db->ExecuteQuery(self::SQL('update content as deleted'), array($this['id']));
+    }
+    $rowcount = $this->db->RowCount();
+    if($rowcount) {
+      $this->AddMessage('success', "Successfully set content '" . htmlEnt($this['key']) . "' as deleted.");
+    } else {
+      $this->AddMessage('error', "Failed to set content '" . htmlEnt($this['key']) . "' as deleted.");
+    }
+    return $rowcount === 1;
+  }
+    
   
   
 }

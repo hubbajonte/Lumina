@@ -13,6 +13,7 @@ class CTextFilter
   /**
    * Properties
    */
+  public $data;
   public static $instance = null;
     
     /**
@@ -29,34 +30,30 @@ class CTextFilter
    * @param $data string of text to filter and format according its filter settings.
    * @returns string with the filtered data.
    */
-    public function Filter($data, $filter)
-    {
-        foreach ($filter as $value)
-        {
-            switch($value)
-            {
+    public static function Filter($data, $filter) {
+
+            switch($filter){
             case 'markdown':
-                $data = $this->markdown($data);
+                $data = CTextFilter::markdown($data);
                 break;
             case 'make_clickable':
-                $data = $this->make_clickable($data);
+                $data = CTextFilter::make_clickable($data);
                 break;
             case 'smartypants':
-                $data = $this->smartyPantsTypographer($data);
+                $data = CTextFilter::smartyPantsTypographer($data);
                 break;
             case 'bbcode':
-                $data = $this->bbcode2html($data);
+                $data = CTextFilter::bbcode2html($data);
                 break;
             case 'htmlpurify':
-                $data = $this->Purify($data);
+                $data = CTextFilter::Purify($data);
                 break;
             case 'plain': 
             default: $data = nl2br(makeClickable(htmlent($data))); break;
             }
-        }
         
         return $data;
-    }
+}
 
 
 

@@ -3,9 +3,47 @@
  */
 @import url(../../../themes/grid/style.css);
 
-html{background-color:#eee;}
-body{background-color:#fff;}
-#outer-wrap-header{background-color:#eee;border-bottom:1px solid #000;}
-#outer-wrap-footer{background-color:#222;border-top:2px solid #eee;}
-a{color:#0099ff}
-#navbar ul.menu li a.selected{background-color:#fff;border-bottom:none;}
+/*This is the style for the HTML element. That is, the heart of the page.
+*
+*/
+html{
+background-color:#eee;
+}
+
+/*This is the style for the BODY element. That is, the "content" of the page.
+*
+*/
+body{
+background-color:#fff;
+}
+
+/*This is the style for the OUTER-WRAP-HEADER. That is, the header of your page.
+*
+*/
+#outer-wrap-header{
+background-color:#eee;
+border-bottom:1px solid #000;
+}
+
+/*This is the style for the OUTER-WRAP_FOOTER. That is, the footer of your page
+*
+*/
+#outer-wrap-footer{
+background-color:#222;
+border-top:2px solid #eee;
+}
+
+/*This is the style for the 'a' element. That is, the links.
+*
+*/
+a{
+color:#0099ff
+}
+
+/*This is the style for the NAVBAR. That is, the navigation bar of your page.
+*
+*/
+#navbar ul.menu li a.selected{
+background-color:#fff;
+border-bottom:none;
+}
