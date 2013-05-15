@@ -100,15 +100,15 @@ How to create Content
 To create content you need to be logged in as a user/admin.
 
 * Login.
-* Click on the __bold__Content link on the navigation bar.
+* Click on the __Content__ link on the navigation bar.
 * In `Actions`, click on the `Create new content` link.
 
 Create a page:
 --------------
-1. Write the title of the page in __bold__Title.
-2. In __bold__Key write your key. This is not yet implemented though.
-3. In __bold__Content write the content of the page.
-4. In __bold__Type write __bold__Page as this will allow you to create the content as a page.
+1. Write the title of the page in __Title__.
+2. In __Key__ write your key. This is not yet implemented though.
+3. In __Content__ write the content of the page.
+4. In __Type__ write __Page__ as this will allow you to create the content as a page.
 5. In __bold_Filter write the filter method that you want to use on this page. 
 
 The currently available filters are:
@@ -129,7 +129,7 @@ Create a post:
 --------------
 Repeat steps 1-3 from the page creation part.
 
-4. In __bold__Type write __bold__Pst as this will allow you to create the content as a post.
+4. In __Type__ write __Post__ as this will allow you to create the content as a post.
 
 Repeat steps 5-7 from the page creation part.
 
