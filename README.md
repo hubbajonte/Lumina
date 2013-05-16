@@ -150,18 +150,14 @@ The currently available filters are:
 
 If you're not familiar with these filters, simply write `plain` and you will be alright.
 
-6\. Press on create.
+  6\. Press on create.
 
-7\. Done.
+  7\. Done.
 
 Create a post:
 --------------
 Repeat steps 1-3 from the page creation part.
 
-4\. In __Type__ write __Post__ as this will allow you to create the content as a post.
+  4\. In __Type__ write __Post__ as this will allow you to create the content as a post.
 
 Repeat steps 5-7 from the page creation part.
-
-
-
-

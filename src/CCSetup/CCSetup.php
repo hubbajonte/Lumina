@@ -20,8 +20,7 @@ class CCSetup extends CObject implements IController {
     $modules = new CMModules();
     $controllers = $modules->AvailableControllers();
     $this->views->SetTitle('Index')
-                ->AddInclude(__DIR__ . '/index.tpl.php', array(), 'primary')
-                ->AddInclude(__DIR__ . '/sidebar.tpl.php', array('controllers'=>$controllers), 'sidebar');
+                ->AddInclude(__DIR__ . '/index.tpl.php', array(), 'primary');
 				
 }
   
