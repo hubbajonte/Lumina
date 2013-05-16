@@ -32,7 +32,7 @@ You can:
 Change the logo
 ===============
 There is two main ways to change the logo of this site.
-The first one is prefered.
+The first one is preferred.
 
 First way:
 ----------
@@ -42,7 +42,7 @@ This is the file that you want to change.
 
 To change the logo, simply:
 * Create a new PNG file that is 80x80 pixels.
-* Rename it to logo_80x80 (.png is the filetype and is there by default when you create a PNG file).
+* Rename it to `logo_80x80` (.png is the file extension and is there by default when you create a PNG file).
 * Overwrite the file in the `mythemes` directory with your new file.
 * Done. Refresh the page.
 
@@ -51,9 +51,9 @@ Second way:
 * Navigate to `/site/themes/mythemes` in your Lumina directory.
 This is the folder there you will place your new logo.
 
-* Create your new logo with your prefered filetype (jpg, png etc).
+* Create your new logo with your preferred filetype (jpg, png etc).
 * Put it in the `mythemes` directory.
-* Go to the root of Lumina. Navigate to `/site/`
+* Navigate back to the root of Lumina. Navigate to `/site`
 * Open the config.php file.
 * Scroll down to the bottom of the file. 
 * The parts that you want to change are named `favicon` and `logo`.
@@ -63,19 +63,19 @@ This is the folder there you will place your new logo.
 
 Change the title/header
 =======================
-* Navigate to `/site/` in your Lumina directory.
+* Navigate to `/site` in your Lumina directory.
 * Open the config.php file.
 * Scroll down to the bottom of the file.
 * The part that you want to change is named `header`.
 * Edit the part that says `<h3>Lumina</h3>`
-* The `<h3></h3>` is HTML for headings. Change this to your prefered heading size if you're familiar with HTML. Otherwise, just change the part that says `Lumina`.
+* The `<h3></h3>` is HTML for headings. Change this to your preferred heading size if you're familiar with HTML. Otherwise, just change the part that says `Lumina`.
 * Save the file.
 * Done. Refresh the page.
 
 
 Change the footer
 =================
-* Navigate to `/site/` in your Lumina directory.
+* Navigate to `/site` in your Lumina directory.
 * Open the config.php file.
 * Scroll down to the bottom of the file.
 * The part that you want to change is named `footer`.
@@ -86,15 +86,16 @@ Change the footer
 
 Change the colors of the theme
 ==============================
-This part reguires that you have some knowledge of the style sheet language __bold__CSS.
+This part reguires that you have some knowledge of the style sheet language __CSS__.
 If you don't have knowledge I will try to guide the best I can.
 
-* Navigate to `/site/themes/mytheme/` in your Lumina directory.
+* Navigate to `/site/themes/mytheme` in your Lumina directory.
 * Open the `style.css` file.
 
 Here you will find more information in the comments on how to customize your theme.
 
 * Save the file when you're done.
+* Refresh the page.
 
 
 Edit the navigation bar
@@ -105,9 +106,9 @@ The menus are hardcoded in the config.php file and comes with some defaults.
 You also need to know the logic behind the configurations that handles the menus.
 I will explain this for you below.
 
-* Navigate to `/site/` in your Lumina directory.
+* Navigate to `/site` in your Lumina directory.
 * Open the config.php file.
-* Scroll down the part that says `$lu->config['menus']`, almost at the bottom of the file.
+* Scroll down to the part that says `$lu->config['menus']`, almost at the bottom of the file.
 * Look at `'my-navbar' => array`. This is where you will edit your menu.
 * You will want to add a new row at the end of the `'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),`.
   Right after the `),` at the end of the line. 
@@ -133,10 +134,10 @@ To create content you need to be logged in as a user/admin.
 Create a page:
 --------------
 1. Write the title of the page in __Title__.
-2. In __Key__ write your key. This is not yet implemented though.
+2. In __Key__ write your key. This is not yet implemented though. You can write your title here to with small letters.
 3. In __Content__ write the content of the page.
 4. In __Type__ write __Page__ as this will allow you to create the content as a page.
-5. In __bold_Filter write the filter method that you want to use on this page. 
+5. In __Filter__ write the filter method that you want to use on this page. 
 
 The currently available filters are:
 
@@ -150,6 +151,7 @@ The currently available filters are:
 If you're not familiar with these filters, simply write `plain` and you will be alright.
 
 6\. Press on create.
+
 7\. Done.
 
 Create a post:
