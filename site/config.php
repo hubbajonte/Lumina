@@ -132,6 +132,7 @@ $lu->config['menus'] = array(
   'my-navbar' => array(
     'home'      => array('label'=>'About Me', 'url'=>'my'),
     'blog'      => array('label'=>'My Blog', 'url'=>'my/blog'),
+    'content'   => array('label'=>'Content', 'url'=>'content'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
 	
   ),
