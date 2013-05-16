@@ -32,5 +32,6 @@ You need to change the part that says "true" to "false".
 </p>
 <p>
 That's it! You can now start using Lumina with the default user accounts.
+Please change the default password if you're using Lumina on a day-to-day basis.
 </p>
 </p>

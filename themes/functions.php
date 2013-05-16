@@ -94,7 +94,7 @@ function login_menu() {
   $lu = CLumina::Instance();
   if($lu->user['isAuthenticated']) {
     $items = "<a href='" . create_url('user/profile') . "'><img class='gravatar' src='" . get_gravatar(20) . "' alt=''> " . $lu->user['acronym'] . "</a> ";
-    if($lu->user['hasRoleAdministrator']) {
+    if($lu->user['hasRoleAdmin']) {
       $items .= "<a href='" . create_url('acp') . "'>acp</a> ";
     }
     $items .= "<a href='" . create_url('user/logout') . "'>logout</a> ";
@@ -128,7 +128,7 @@ function esc($str) {
 
 
 /**
- * Filter data according to a filter. Uses CMContent::Filter()
+ * Filter data according to a filter. Uses CTextFilter::Filter()
  *
  * @param $data string the data-string to filter.
  * @param $filter string the filter to use.
@@ -142,7 +142,7 @@ function esc($str) {
 
  /**
    * Function for checking if the database is writable 
-   * @returns true or false
+   * @echo a message telling the user what to do.
    */
 function CheckWritable($filename) {
    if (is_writable($filename)) {
@@ -156,7 +156,7 @@ function CheckWritable($filename) {
 
    /**
    * Function for checking if the user has the right version of PHP installed
-   * @returns true or false
+   * @echo a message telling the user what to do.
    */
 function CheckPHPVersion() {
    if (version_compare(phpversion(), '5.3.00', '>')) {
@@ -252,7 +252,7 @@ function region_has_content($region='default' /*...*/) {
 }
 
 /**
- * Check if the user is ok
+ * Check if the user setup is ok
  *
  * @returns a message telling if everything is ok or not.
  */

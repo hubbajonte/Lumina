@@ -74,7 +74,8 @@ class CMContent extends CObject implements IHasSQL, ArrayAccess, IModule {
           $this->db->ExecuteQuery(self::SQL('drop table content'));
           $this->db->ExecuteQuery(self::SQL('create table content'));
           $this->db->ExecuteQuery(self::SQL('insert content'), array('hello-world', 'post', 'Hello World', "This is a demo post.\n\nThis is another row in this demo post.", 'plain', $this->user['id']));
-          $this->db->ExecuteQuery(self::SQL('insert content'), array('about', 'page', 'About page', "This is a demo page, this could be your personal about-page.\n\nWelcome to Lumina!", 'plain', $this->user['id']));   
+          $this->db->ExecuteQuery(self::SQL('insert content'), array('about', 'page', 'About page', "This is a demo page, this could be your personal about-page.\n\nWelcome to Lumina!", 'plain', $this->user['id']));
+		            $this->db->ExecuteQuery(self::SQL('insert content'), array('home', 'page', 'Home', "Welcome to Lumina!", 'plain', $this->user['id'])); 
 		 return array('success', 'Successfully created the database tables and created a default "Hello World" blog post, owned by you.');
         } catch(Exception$e) {
           die("$e<br/>Failed to open database: " . $this->config['database'][0]['dsn']);

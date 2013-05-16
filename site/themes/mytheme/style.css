@@ -4,21 +4,22 @@
 @import url(../../../themes/grid/style.css);
 
 /*This is the style for the HTML element. That is, the heart of the page.
-*
+* background-color: This is the background color of the theme, change it to your preferred color
 */
 html{
 background-color:#eee;
 }
 
 /*This is the style for the BODY element. That is, the "content" of the page.
-*
+* background-color: This is the background color of the body, change it to your preferred color
 */
 body{
 background-color:#fff;
 }
 
 /*This is the style for the OUTER-WRAP-HEADER. That is, the header of your page.
-*
+* background-color: This is the background color of the header, change it to your preferred color
+* border-bottom: This is the line at the bottom of the header, change it to your preferred color and size
 */
 #outer-wrap-header{
 background-color:#eee;
@@ -26,7 +27,8 @@ border-bottom:1px solid #000;
 }
 
 /*This is the style for the OUTER-WRAP_FOOTER. That is, the footer of your page
-*
+* background-color: This is the background color of the footer, change it to your preferred color
+* border-top: This is the line at the top of the footer, change it to your preferred color and size
 */
 #outer-wrap-footer{
 background-color:#222;
@@ -34,14 +36,15 @@ border-top:2px solid #eee;
 }
 
 /*This is the style for the 'a' element. That is, the links.
-*
+* color: This is the color for the links, change it to your preferred color
 */
 a{
 color:#0099ff
 }
 
 /*This is the style for the NAVBAR. That is, the navigation bar of your page.
-*
+* background-color: This is the background color of the navbar, change it to your prefered color
+* border-bottom: This is the line at the bottom of the navbar, change it to your prefered color and size
 */
 #navbar ul.menu li a.selected{
 background-color:#fff;

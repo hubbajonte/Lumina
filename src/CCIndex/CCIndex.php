@@ -15,7 +15,8 @@ class CCIndex extends CObject implements IController {
   /**
    * Implementing interface IController. All controllers must have an index action.
    */
-  public function Index() {			
+  public function Index() {
+    $content = new CMContent(3);  
     $guestbook = new CMGuestbook();
     $form = new CFormMyGuestbook($guestbook);
     $status = $form->Check();
@@ -26,7 +27,7 @@ class CCIndex extends CObject implements IController {
       $this->RedirectToControllerMethod();
     }  
     $this->views->SetTitle('Index')
-                ->AddInclude(__DIR__ . '/index.tpl.php', array(), 'primary')
+                ->AddInclude(__DIR__ . '/index.tpl.php', array('content' => $content,), 'primary')
 				->AddInclude(__DIR__ . '/sidebar.tpl.php', array(
             'entries'=>$guestbook->ReadAll(), 
             'form'=>$form,

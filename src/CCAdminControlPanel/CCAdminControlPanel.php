@@ -16,14 +16,15 @@ class CCAdminControlPanel extends CObject implements IController {
 
 
   /**
-   * Show profile information of the user.
+   * Index for the ACP.
    */
   public function Index() {
+    $modules = new CMModules();
+    $controllers = $modules->AvailableControllers();
     $this->views->SetTitle('ACP: Admin Control Panel');
-    $this->views->AddInclude(__DIR__ . '/index.tpl.php', array(
-	                'hasRoleAdmin'=>$this->user['hasRoleAdmin'], 
-	
-	                                                        ));
+    $this->views->AddInclude(__DIR__ . '/sidebar.tpl.php', array('controllers'=>$controllers), 'sidebar')
+	            ->AddInclude(__DIR__ . '/index.tpl.php', array(
+	                'hasRoleAdmin'=>$this->user['hasRoleAdmin'], 'primary'));
   }
  
 

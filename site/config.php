@@ -123,6 +123,7 @@ $lu->config['routing'] = array(
 $lu->config['menus'] = array(
   'navbar' => array(
     'home'      => array('label'=>'Home', 'url'=>'home'),
+
     'modules'   => array('label'=>'Modules', 'url'=>'module'),
     'content'   => array('label'=>'Content', 'url'=>'content'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'guestbook'),
@@ -132,6 +133,7 @@ $lu->config['menus'] = array(
     'home'      => array('label'=>'About Me', 'url'=>'my'),
     'blog'      => array('label'=>'My Blog', 'url'=>'my/blog'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
+	
   ),
 );
 

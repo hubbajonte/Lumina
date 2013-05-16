@@ -1,6 +1,6 @@
 <?php
 /**
- * Standard controller layout.
+ * Controller that controlls the Setup.
  * 
  * @package LuminaCore
  */
@@ -27,7 +27,7 @@ class CCSetup extends CObject implements IController {
   
   
   /**
-   * Show a index-page and display what can be done through this controller.
+   * Show a install-page and guides the user through it.
    */
   public function Install() {
     $modules = new CMModules();
