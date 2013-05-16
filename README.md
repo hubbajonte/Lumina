@@ -13,8 +13,8 @@ First download/clone the Lumina repository from Github to your server:
 
 Step 2:
 -------
-Point your browser to the install page.
-[http://your.url/Lumina/install]
+Point your browser to the setup page.
+[http://your.url/Lumina/setup]
 Follow the instructions from there.
 
 How to Customize
@@ -27,6 +27,7 @@ You can:
 * Change the footer.
 * Change the colors of the theme.
 * Create, edit and delete content.
+* Edit the navigation bar.
 
 Change the logo
 ===============
@@ -41,7 +42,7 @@ This is the file that you want to change.
 
 To change the logo, simply:
 * Create a new PNG file that is 80x80 pixels.
-* Rename it to logo_80x80 (png is the filetyp and is there by default).
+* Rename it to logo_80x80 (.png is the filetype and is there by default when you create a PNG file).
 * Overwrite the file in the `mythemes` directory with your new file.
 * Done. Refresh the page.
 
@@ -95,6 +96,32 @@ Here you will find more information in the comments on how to customize your the
 
 * Save the file when you're done.
 
+
+Edit the navigation bar
+=======================
+To edit the navigation bar (the bar below the logo and title) there is a few things you need to think about.
+The menus are hardcoded in the config.php file and comes with some defaults.
+
+You also need to know the logic behind the configurations that handles the menus.
+I will explain this for you below.
+
+* Navigate to `/site/` in your Lumina directory.
+* Open the config.php file.
+* Scroll down the part that says `$lu->config['menus']`, almost at the bottom of the file.
+* Look at `'my-navbar' => array`. This is where you will edit your menu.
+* You will want to add a new row at the end of the `'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),`.
+  Right after the `),` at the end of the line. 
+* Add the new page like this `'example1' => array('label' => 'example2', 'url' => 'page/view/2'),`.
+
+* `'example1'` This is a placeholder for the system.
+* `'example2'` This is what will be shown as a link.
+* `'page/view/2'` This is the actual link to the page (that you created).
+
+To find out what link your page has, simply browse your way to it and look at what the address bar says.
+
+* Save.
+* Done. Refresh the page.
+
 How to create Content
 =====================
 To create content you need to be logged in as a user/admin.
@@ -122,18 +149,16 @@ The currently available filters are:
 
 If you're not familiar with these filters, simply write `plain` and you will be alright.
 
-6. Press on create.
-7. Done.
+6\. Press on create.
+7\. Done.
 
 Create a post:
 --------------
 Repeat steps 1-3 from the page creation part.
 
-4. In __Type__ write __Post__ as this will allow you to create the content as a post.
+4\. In __Type__ write __Post__ as this will allow you to create the content as a post.
 
 Repeat steps 5-7 from the page creation part.
-
-
 
 
 
