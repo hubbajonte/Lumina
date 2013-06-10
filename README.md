@@ -17,6 +17,9 @@ Point your browser to the setup page.
 [http://your.url/Lumina/setup]
 Follow the instructions from there.
 
+Replace the your.url with your own url.
+If you're on the BTH Student server, check the .htaccess file.
+
 How to Customize
 ================
 Lumina can be customized to fit your personal style.
