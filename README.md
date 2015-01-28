@@ -2,6 +2,7 @@ This is the readme file.
 ========================
 
 Lumina is a PHP-based MVC-inspired CMF created by Jonathan Arévalo at Blekinge Institute of Technology.
+Live version can be tested here: http://www.student.bth.se/~joay11/phpmvc/Projekt/Lumina/
 
 How to Install
 ==============
